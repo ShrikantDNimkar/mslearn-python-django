@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- master
+- '*'
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
@@ -23,7 +23,7 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
 
   # Python version: 3.7
-  pythonVersion: '3.8'
+  pythonVersion: '3.7'
 
 stages:
 - stage: Build
@@ -35,7 +35,7 @@ stages:
     steps:
     - task: UsePythonVersion@0
       inputs:
-        versionSpec: '3.8'
+        versionSpec: '3.7'
         addToPath: true
         architecture: 'x64'
       displayName: 'Use Python $(pythonVersion)'
