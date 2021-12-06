@@ -23,7 +23,7 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)/Application
 
   # Python version: 3.7
-  # pythonVersion: '3.7'
+  pythonVersion: '>= 3.7'
 
 stages:
 - stage: Build
@@ -35,9 +35,9 @@ stages:
     steps:
     - task: UsePythonVersion@0
       inputs:
-        versionSpec: '3.x'
+        versionSpec: pythonVersion
         addToPath: true       
-      displayName: 'Use Python 3.x'
+      displayName: 'Use Python $(pythonVersion)'
 
     - script: |
         python -m venv antenv
@@ -77,7 +77,7 @@ stages:
 
           - task: UsePythonVersion@0
             inputs:
-              versionSpec: '3.x'
+              versionSpec: pythonVersion
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
