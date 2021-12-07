@@ -14,7 +14,7 @@ variables:
   webAppName: 'python-cicd-by-Shrikant'
 
   # Agent VM image name
-  name: 'Azure Pipelines'
+  name: 'MyAgentPool'
 
   # Environment name
   environmentName: 'python-cicd-by-Shrikant'
@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      name: 'Azure Pipelines'
+      name: 'MyAgentPool'
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -68,7 +68,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      name: 'Azure Pipelines'
+      name: 'MyAgentPool'
     environment: $(environmentName)
     strategy:
       runOnce:
