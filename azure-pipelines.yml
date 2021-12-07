@@ -14,7 +14,7 @@ variables:
   webAppName: 'python-cicd-by-Shrikant'
 
   # Agent VM image name
-  vmImage: 'windows-latest'
+  name: 'Azure Pipelines'
 
   # Environment name
   environmentName: 'python-cicd-by-Shrikant'
@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      vmImage: 'windows-latest'
+      name: 'Azure Pipelines'
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -68,7 +68,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      vmImage: 'windows-latest'
+      name: 'Azure Pipelines'
     environment: $(environmentName)
     strategy:
       runOnce:
