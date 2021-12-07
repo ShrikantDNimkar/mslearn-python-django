@@ -33,7 +33,7 @@ stages:
     pool:
       name: 'MyAgentPool'
     steps:
-    - task: UsePythonVersion@0
+    # - task: UsePythonVersion@0
       inputs:
         versionSpec: pythonVersion
         addToPath: true       
