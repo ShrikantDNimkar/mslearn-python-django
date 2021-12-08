@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      name: 'MyAgentPool'
+      vmImage: 'ubuntu-latest'
     steps:
 
     - script: |
@@ -63,7 +63,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      name: 'MyAgentPool'
+      vmImage: 'ubuntu-latest'
     environment: $(environmentName)
     strategy:
       runOnce:
